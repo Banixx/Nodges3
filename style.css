@@ -1,3 +1,40 @@
+
+#mouseOverPopup {
+  display: none; /* Versteckt das Popup standardmäßig */
+  position: fixed;
+  width: 120px;
+  height: 60px;
+  background-color: rgba(128, 128, 128, 0.5); /* Halbtransparentes Grau */
+  border: 1px solid black;
+  border-radius: 5px;
+  pointer-events: none; /* Verhindert, dass das Popup mit der Maus interagiert und Events blockiert */
+  padding: 10px;
+  color: black;
+  font-size: 14px;
+}
+
+.label {
+  color: #3ba159;
+  font-family: sans-serif;
+  padding: 2px;
+  background: rgba(128, 43, 43, 0.1);
+}
+
+/* Rest deines CSS für Body, Container, etc. */
+
+.tooltip {
+    display: none;
+    position: fixed;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    pointer-events: none; /* Stellt sicher, dass das Tooltip nicht mit der Maus interagieren kann */
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
