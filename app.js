@@ -65,12 +65,11 @@ const cube = new THREE.Mesh(geometry, material);
 cube.position.set(2, 2, 2);
 cube.castShadow = true;
 cube.layers.enable(0);
-window.myDebugCube = cube; // Mache den Würfel global unter dem Namen myDebugCube verfügbar
+cube.name = "cube";
+window.myDebugCube = cube; 
 
 scene.add(cube);
-
-console.log(cube);
-
+//console.log(myDebugCube);
 
 // functionEbene
 const planeGeometry = new THREE.PlaneGeometry(10, 10);
@@ -122,6 +121,16 @@ window.addEventListener('mousemove', (event) => {
         showPopup(false);
     }
 });
+
+
+// Angenommen, deine Szene heißt 'scene' und der Raycaster heißt 'raycaster'
+scene.children.forEach((child, index) => {
+    // Für jedes Kind in der Szene wird dessen Name und Layer-Index ausgegeben
+    console.log(`Objekt ${index}: Name = ${child.name}, Layer = ${child.layers.mask}`);
+});
+
+// Zeigt die Layer-Konfiguration des Raycasters an
+console.log(`Raycaster Layers: ${raycaster.layers.mask.toString(2)}`);
 
 
 function animate() {
