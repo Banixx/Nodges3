@@ -72,7 +72,9 @@ scene.add(plane);
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
 directionalLight.position.set(5, 10, 7.5);
 directionalLight.castShadow = true;
-scene.add(directionalLight);
+directionalLight.name = "lightDir";
+directionalLight.layers.enable(0,31)
+;scene.add(directionalLight);
 
 
 const mouseOverPopup = document.createElement('div');
@@ -80,7 +82,7 @@ mouseOverPopup.id = 'mouseOverPopup';
 document.body.appendChild(mouseOverPopup);
 
 function updatePopupContent(content) {
-    mouseOverPopup.innerHTML = content; // Setze den Inhalt des Popups
+    mouseOverPopup.innerHTML = content; 
 }
 
 function showPopup(show = true) {
